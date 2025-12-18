@@ -1,0 +1,140 @@
+<html lang = "eng">
+    <head>
+        <meta charset="UTF-8" >
+        <title>whatsapp web clone</title>
+        <style>
+         *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:arial,sans-serif;
+          }
+           body{
+            background:rgb(21, 60, 189);
+           }
+           .container{
+               display:flex;
+               height:100vh;
+           }
+           .sidebar{
+            width:30%;
+            background:#4c11d6;
+            border-right:1px solid #be0909;
+           }
+           .sidebar-header{
+              background:#075E54;
+              color:rgb(231, 22, 22);
+              padding:15px;
+              font-size:20px;
+           }
+           .chat{
+             display:flex;
+             padding:12px;
+             cursor:pointer;
+             border-bottom:1px solid #222097;
+           }
+           .chat img{
+            border-radius:50%;
+            margin-right:10px;
+           }
+ .chat h4{
+    font-size:16px;
+ }
+      .chat p{
+        font-size:13px;
+        color:rgb(47, 206, 42);
+      }   
+      .chat-area{
+        width:70%;
+        display:flex;
+        flex-direction:column;
+      }
+      .chat-header{
+         background:#291279;
+         color:rgb(27, 8, 131);
+         padding:15px;
+         font-size:18px;
+      }
+      .messages{
+        flex:1;
+        padding:15px;
+        background:#e5ddd5;
+        overflow-y:auto;
+      }  
+         .message{
+            max-width:60%;
+            padding:10px;
+            margin:5px 0;
+            border-radius:8px;
+            font-size:14px;
+       }
+       .sent{
+           background:#0e5686;
+           margin-left:auto;
+       }
+       .received{
+        background:rgb(13, 19, 104);
+       }
+       .input-area{
+        display:flex;
+        padding:10px;
+        background:#8f081f;
+       }
+       .input-area input{
+        flex:1;
+        padding:10px;
+        font-size:14px;
+       }
+       .input-area button{
+             background:#075E54;
+             color:white;
+             border:none;
+             padding:10px 15px;
+             margin-left:5px;
+             cursor:pointer;
+       }
+        </style>
+       </head>
+       <body>
+       <div class="container">
+       <div class="sidebar">
+         <div class="sidebar-header">whatsapp</div>
+         <div class="chat">
+         <img src="https://via.placeholder.com/40">
+               <div>
+                  <h4>ravi</h4>
+                  <p>online</p>
+                  </div>
+                  </div>
+                  </div>
+<div class="chat-area">
+    <div class="chat-header">ravi</div>
+    <div class="message received">hi</div>
+    </div>
+    <div class="input-area">
+        <input type="text" id="msginput" placeholder="type a message>"
+        <button onclick="sendmessage()">send</button>
+        </div>
+        </div>
+    </div>
+    <script>
+    function sendmessage(){
+        let input =
+        document.getElementById("msginput");
+          let messagetext=input.value.trim();
+          if(messagetext==="") return;
+
+          let msgdiv = document.createElement("div");
+          msgdiv.classname="message sent";
+          msgdiv.innertext= messagetext;
+        document.getElementById("messages").appendChild(msgdiv);
+        input.value="";
+
+        document.getElementById("messages").scrollTop=
+        document.getElementById("messages").scrollheight;
+
+    
+    }
+    </script>
+    </body>
+</html>
